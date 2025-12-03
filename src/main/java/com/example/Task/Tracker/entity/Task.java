@@ -33,6 +33,10 @@ public class Task {
     @Column(nullable = false)
     private TaskPriority priority;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="task_list_id")
+    private TaskList taskList;
+
     @Column(name = "created_date",nullable = false)
     private LocalDateTime createdDate;
 
